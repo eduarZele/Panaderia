@@ -1,0 +1,239 @@
+@charset "UTF-8";
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+body {
+  height: 100vh;
+  width: 100%;
+}
+
+.sidebar {
+  position: fixed;
+  display: flex;
+  flex-direction: column;
+  background-color: #fdcaa8;
+  width: 250px;
+  height: 100%;
+  text-align: center;
+  z-index: 1000;
+  transition: width 0.5s ease;
+}
+
+.sidebar hr {
+  margin: 10px;
+  color: #fff;
+}
+
+.sidebar .logo {
+  height: 100px;
+}
+
+.sidebar .logo img {
+  width: 230px;
+  object-fit: cover;
+  object-position: center;
+}
+
+.sidebar .logo #soloPan {
+  display: none;
+}
+
+.sidebar .user {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.sidebar .user img {
+  height: 60px;
+  width: 60px;
+  border-radius: 50%;
+}
+
+.sidebar .user span {
+  white-space: nowrap;
+}
+
+.menu .list-item {
+  padding: 8px 0px;
+  list-style: none;
+  width: 100%;
+  text-align: center;
+  cursor: pointer;
+  overflow: hidden;
+}
+
+.menu .list-item .list-button {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 70%;
+  margin: 0 auto;
+}
+
+.menu .list-item .list-button .list-flecha {
+  margin-left: auto;
+  transition: transform .3s;
+}
+
+.menu .list-item .list-button .list-img {
+  text-align: center;
+  justify-self: center;
+  align-self: center;
+  min-width: 40px;
+}
+
+.menu .list-item .list-button:hover::before {
+  content: "";
+  position: absolute;
+  top: -1px;
+  /* Ajusta la posición para que la sombra sea más grande */
+  left: -30px;
+  /* Ajusta la posición para que la sombra sea más grande */
+  right: -30px;
+  /* Ajusta la posición para que la sombra sea más grande */
+  bottom: 0px;
+  /* Ajusta la posición para que la sombra sea más grande */
+  background-color: #ffffff80;
+  border-radius: 6px;
+  z-index: -1;
+}
+
+.menu .list-item .flecha .list-flecha {
+  transform: rotate(90deg);
+}
+
+.menu .list-item .list-show {
+  width: 80%;
+  margin-left: auto;
+  border-left: 2px solid #6c320d;
+  list-style: none;
+  transition: height .4s;
+  height: 0;
+}
+
+.menu .list-item .list-show .list-inside .nav-link_inside {
+  border-radius: 6px;
+  padding-left: 20px;
+  text-align: left;
+}
+
+.nav-link {
+  display: block;
+  padding: 5px 0;
+  font-size: 17px;
+  color: #6c320d;
+  text-decoration: none;
+}
+
+.flecha ~ .nav-link_inside:hover {
+  display: flex;
+  background-color: #ffffff80;
+}
+
+.navbar {
+  display: flex;
+  position: fixed;
+  left: 250px;
+  width: calc(100% - 250px);
+  background-color: #ffe0cc;
+  padding: 3px 0px;
+  z-index: 500;
+  transition: all 0.5s ease;
+}
+
+.navbar img {
+  color: #6c320d;
+  width: 37px;
+  height: 45px;
+}
+
+.navbar div {
+  margin-left: 20px;
+  padding: 0px 5px;
+}
+
+.navbar div:hover {
+  border-radius: 6px;
+  background-color: #ffffff80;
+}
+
+.mini-sidebar {
+  width: 60px;
+}
+
+.mini-sidebar .logo img {
+  display: none;
+}
+
+.mini-sidebar .logo #soloPan {
+  opacity: 1;
+  transition: opacity 0.2s ease;
+  width: 60px;
+  height: 73px;
+  display: flex;
+  object-fit: cover;
+  object-position: center;
+}
+
+.mini-sidebar .user span {
+  display: none;
+  transition: all .4s;
+}
+
+.mini-sidebar .menu .list-button:hover::before {
+  content: "";
+  position: absolute;
+  top: -1px;
+  /* Ajusta la posición para que la sombra sea más grande */
+  left: -5px;
+  /* Ajusta la posición para que la sombra sea más grande */
+  right: -5px;
+  /* Ajusta la posición para que la sombra sea más grande */
+  bottom: 0px;
+  /* Ajusta la posición para que la sombra sea más grande */
+  background-color: #ffffff80;
+  border-radius: 6px;
+  z-index: -1;
+}
+
+.mini-sidebar .menu .list-item {
+  display: flex;
+}
+
+.mini-sidebar .menu .list-item .list-show {
+  display: none;
+}
+
+.mini-sidebar .menu .list-item .list-show .nav-link_inside {
+  padding: 10px 8px;
+}
+
+.mini-sidebar .menu .list-item .flecha ~ .list-show {
+  border-radius: 0px 6px 6px 0px;
+  background-color: #fdcaa8;
+  position: absolute;
+  width: 160px;
+  display: block;
+  left: 100%;
+}
+
+.main {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  left: 250px;
+  width: calc(100% - 250px);
+  height: calc(100vh - 61px);
+  transition: all 0.5s ease;
+}
+
+.mini-sidebar ~ .navbar,
+.mini-sidebar ~ .main {
+  left: 60px;
+  width: calc(100% - 60px);
+}

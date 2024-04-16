@@ -1,0 +1,159 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Panaderia Sass
+    </title>
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+</head>
+<body>
+    <div class="sidebar">
+        <div class="logo">
+            <img src="{% static 'img/logoPan.png' %}" alt="">
+            <img id="soloPan" src="{% static 'img/soloPan.png' %}" alt="">
+        </div>
+        <hr>
+        <div class="user">
+            <img src="{% static 'img/perfil.png' %}" alt="">
+            <span id="move">Eduardo Zeledón</span>
+        </div>
+        <hr>
+        <ul class="menu">
+
+            <!-- Primer Menu -->
+            <li class="list-item">
+                <div class="list-button">
+                    <img src="{% static 'img/factura.png' %}" class="list-img" title="Factura">
+                    <a href="#" class="nav-link" id="move" title="Factura">Factura</a>
+                    <img src="{% static 'img/next(1).png' %}" class="list-flecha" id="move">
+                </div>
+
+                <!-- Primer SubMenu -->
+                <ul class="list-show">
+
+                    <li class="list-inside">
+                        <a href="#" class="nav-link nav-link_inside">Nueva Factura</a>
+                    </li>
+
+                    <li class="list-inside">
+                        <a href="#" class="nav-link nav-link_inside">Registro</a>
+                    </li>
+                </ul>
+
+            </li>
+
+            <!-- Segundo Menu -->
+            <li class="list-item">
+                <div class="list-button">
+                    <img src="{% static 'img/inventario.png' %}" class="list-img" title="Inventario">
+                    <a href="#" class="nav-link" id="move" title="Inventario">Inventario</a>
+                    <img src="{% static 'img/next(1).png' %}" class="list-flecha" id="move">
+                </div>
+
+                <!-- Segundo SubMenu -->
+                <ul class="list-show">
+                    <li class="list-inside">
+                        <a href="#" class="nav-link nav-link_inside">Materia Prima</a>
+                    </li>
+
+                    <li class="list-inside">
+                        <a href="#" class="nav-link nav-link_inside">Producto</a>
+                    </li>
+                </ul>
+
+            </li>
+
+            <!-- Tercer Menu -->
+            <li class="list-item">
+                <div class="list-button">
+                    <img src="{% static 'img/ventas.png' %}" class="list-img" title="Ventas">
+                    <a href="#" class="nav-link" id="move" title="Ventas">Ventas</a>
+                    <img src="{% static 'img/next(1).png' %}" class="list-flecha" id="move">
+                </div>
+
+                <!-- Tercer SubMenu -->
+                <ul class="list-show">
+                    <li class="list-inside">
+                        <a href="#" class="nav-link nav-link_inside">Registro</a>
+                    </li>
+
+                    <li class="list-inside">
+                        <a href="#" class="nav-link nav-link_inside">Gráficas</a>
+                    </li>
+                </ul>
+            </li>
+
+            <!-- Cuarto Menu -->
+            <li class="list-item">
+                <div class="list-button">
+                    <img src="{% static 'img/clienteOtro.png' %}" class="list-img" title="Clientes">
+                    <a href="#" class="nav-link" id="move" title="Clientes">Clientes</a>
+                    <img src="{% static 'img/next(1).png' %}" class="list-flecha" id="move">
+                </div>
+
+                <!-- Tercer SubMenu -->
+                <ul class="list-show">
+                    <li class="list-inside">
+                        <a href="/agregar" class="nav-link nav-link_inside">Agregar</a>
+                    </li>
+
+                    <li class="list-inside">
+                        <a href="/listar" class="nav-link nav-link_inside">Listar</a>
+                    </li>
+
+                    <li class="list-inside">
+                        <a href="#" class="nav-link nav-link_inside">Mejores Clientes</a>
+                    </li>
+                </ul>
+            </li>
+
+            <!-- Quinto Menu -->
+            <li class="list-item">
+                <div class="list-button">
+                    <img src="{% static 'img/empleadoOtro.png' %}" class="list-img" title="Empleados">
+                    <a href="#" class="nav-link" id="move" title="Empleados">Empleados</a>
+                    <img src="{% static 'img/next(1).png' %}" class="list-flecha" id="move">
+                </div>
+
+                <!-- Quinto SubMenu -->
+                <ul class="list-show">
+                    <li class="list-inside">
+                        <a href="#" class="nav-link nav-link_inside">Agregar</a>
+                    </li>
+
+                    <li class="list-inside">
+                        <a href="#" class="nav-link nav-link_inside">Listar</a>
+                    </li>
+
+                    <li class="list-inside">
+                        <a href="#" class=" nav-link nav-link_inside">Mejores Empleados</a>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+
+    <nav class="navbar">
+        <div>
+            <img id="bars" src="{% static 'img/bar-de-hamburguesas.png'%}" alt="">
+        </div>
+    </nav>
+
+    <main class="main">
+        {% block content %}
+
+        {% endblock %}
+    </main>
+
+    <script src="{% static 'js/script.js' %}"></script>
+
+</body>
+</html>

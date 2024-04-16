@@ -1,0 +1,284 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+//----> Colores principales del sidebar
+$color-primary: #fdcaa8;
+$color-cofee: #6c320d;
+$color-hover: #ffffff80;
+$color-navbar: #ffe0cc;
+
+
+body{
+    height: 100vh;
+    width: 100vw;
+}
+
+//Sidebar sin encoger --> Barra Vertical y modificaciones a sus hijos.
+.sidebar{
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    // border: 2px solid rgb(45, 237, 45);
+    background-color: $color-primary;
+    width: 250px;
+    height: 100%;
+    text-align: center;
+    // padding:10px 10px;
+    z-index: 1000;
+    transition: width 0.5s ease;
+
+    hr{
+        margin: 10px;
+        color: #fff;
+    }
+
+    .logo{
+        height: 100px;
+        // background-color: blue;
+
+        img{
+            width: 230px;
+            object-fit: cover;
+            object-position: center;
+            // border: 2px solid red;
+        }
+
+        #soloPan{
+            display: none;
+        }
+    }
+
+    .user{
+        // border: 2px solid red;
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+        // border: 2px solid red;
+        
+        img{
+            height: 60px;
+            width: 60px;
+            border-radius: 50%;
+        }
+
+        span{
+            white-space: nowrap;
+        }
+    }
+}
+
+// Menus que tendra el sidebar
+.menu{
+    // border: 2px solid red;
+    .list-item{
+        padding: 8px 0px;
+        // border: 2px solid greenyellow;
+        list-style: none;
+        width: 100%;
+        text-align: center;
+        cursor: pointer;
+        overflow: hidden;
+        // border: 2px solid greenyellow;
+        
+        .list-button{
+            position: relative;
+            display: flex;
+            align-items: center;
+            // gap: 1em;
+            width: 70%;
+            margin: 0 auto;
+            // border: 2px solid red;
+        
+            .list-flecha{
+                margin-left: auto;
+                transition: transform .3s;
+            }
+
+            .list-img{
+                // border: 2px solid red;
+                text-align: center;
+                justify-self: center;
+                align-self: center;
+                min-width: 40px;
+            }
+        }
+
+        .list-button:hover::before{
+            content: "";
+            position: absolute;
+            top: -1px; /* Ajusta la posición para que la sombra sea más grande */
+            left: -30px; /* Ajusta la posición para que la sombra sea más grande */
+            right: -30px; /* Ajusta la posición para que la sombra sea más grande */
+            bottom: 0px; /* Ajusta la posición para que la sombra sea más grande */
+            background-color: $color-hover;
+            border-radius: 6px;
+            z-index: -1;
+        }
+
+        .flecha{
+
+            .list-flecha{
+                transform: rotate(90deg);
+            }
+        }
+
+        .list-show{
+            width: 80%; 
+            margin-left: auto;
+            border-left: 2px solid $color-cofee ;
+            list-style: none;
+            transition: height .4s;
+            height: 0;
+
+            .list-inside{
+                .nav-link_inside{
+                    border-radius: 6px;
+                    padding-left: 20px;
+                    text-align: left;
+                }
+            }
+        }
+
+    }
+}
+
+.nav-link{
+    display: block;
+    padding: 5px 0;
+    font-size: 17px;
+    color: $color-cofee;
+    text-decoration: none;
+}
+
+.flecha ~ .nav-link_inside:hover{
+    display: flex;
+    background-color: $color-hover;
+}
+
+//Barra Horizontal Superior
+.navbar{
+    display: flex;
+    position: fixed;
+    left: 250px;
+    width: calc(100% - 250px);
+    background-color: $color-navbar;
+    padding: 3px 0px;
+    z-index: 500;
+    transition: all 0.5s ease;
+    
+    // Iconos de bars que funciona de boton
+    img{
+        color: #6c320d;
+        // border: 2px solid red;
+        width: 37px;
+        height: 45px;
+    }
+
+    div{
+        margin-left: 20px;
+        padding: 0px 5px;
+        // background-color: grey;
+    }
+
+    div:hover{
+        border-radius: 6px;
+        background-color: $color-hover;
+    }
+
+}
+
+// ===================================================================================================================================================
+
+// ACÁ EMPIEZA EL ESTILO DEL SIDEBAR ENCOGIDO
+
+//el sidebar cuando está encogido tiene un width distinto.
+.mini-sidebar{
+    width: 60px;
+    // display: flex;
+    // align-items: center;
+
+    .logo{
+        // border: 2px solid greenyellow;
+
+        img{
+            display: none;
+        }
+
+        #soloPan{
+            opacity: 1;
+            transition: opacity 0.2s ease;
+            // border: 2px solid red;
+            width: 60px;
+            height: 73px;
+            display: flex;
+            object-fit: cover;
+            object-position: center;
+        }
+    }
+
+    .user{
+
+        span{
+            display: none;  
+            transition: all .4s;
+        }
+    }
+
+    .menu{
+        .list-button:hover::before{
+            content: "";
+            position: absolute;
+            top: -1px; /* Ajusta la posición para que la sombra sea más grande */
+            left: -5px; /* Ajusta la posición para que la sombra sea más grande */
+            right: -5px; /* Ajusta la posición para que la sombra sea más grande */
+            bottom: 0px; /* Ajusta la posición para que la sombra sea más grande */
+            background-color: $color-hover;
+            border-radius: 6px;
+            z-index: -1;
+        }
+
+        .list-item{
+            display: flex;
+            // border: 2px solid greenyellow;
+            .list-show{
+                display: none;
+
+                .nav-link_inside{
+                    padding: 10px 8px;
+                }
+            } 
+
+            .flecha ~ .list-show{
+                border-radius: 0px 6px 6px 0px;
+                background-color: $color-primary;
+                position: absolute;
+                width: 160px;
+                display: block;
+                left: 100%;
+            }
+        }
+    }
+}
+
+.main {
+    display: flex;
+    flex-direction: column;
+    // border: 2px solid red;
+    position: absolute;
+    left: 250px;
+    // top: 61px;
+    width: calc(100% - 250px);
+    height: calc(100vh - 61px);
+    transition: all 0.5s ease;
+}
+
+//cuando el sidebar este encogido, el navbar reducirá su left y width
+.mini-sidebar ~ .navbar,
+.mini-sidebar ~ .main{
+    left: 60px;
+    width: calc(100% - 60px);
+}
