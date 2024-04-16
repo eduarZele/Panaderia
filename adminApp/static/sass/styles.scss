@@ -73,7 +73,10 @@ body{
 
 // Menus que tendra el sidebar
 .menu{
-    // border: 2px solid red;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 2px solid red;
     .list-item{
         padding: 8px 0px;
         // border: 2px solid greenyellow;
@@ -229,6 +232,10 @@ body{
     }
 
     .menu{
+
+        // display: flex;
+        // align-items: center;
+        // justify-content: center;
         .list-button:hover::before{
             content: "";
             position: absolute;
